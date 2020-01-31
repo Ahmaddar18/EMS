@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/cf_style.css",
-    "main.js": "/cf_main.js",
-    "main.js.map": "/cf_main.js.map",
-    "cf_main.js.LICENSE": "/cf_main.js.LICENSE",
-    "cf_style.css.map": "/cf_style.css.map",
-    "index.html": "/index.html",
-    "precache-manifest.2cd798c91b9934dc9a9d4a9743ef2304.js": "/precache-manifest.2cd798c91b9934dc9a9d4a9743ef2304.js",
-    "service-worker.js": "/service-worker.js"
+    "main.css": "./cf_style.css",
+    "main.js": "./cf_main.js",
+    "main.js.map": "./cf_main.js.map",
+    "cf_main.js.LICENSE": "./cf_main.js.LICENSE",
+    "cf_style.css.map": "./cf_style.css.map",
+    "index.html": "./index.html",
+    "precache-manifest.77db9e2c998111782d63197017720a1b.js": "./precache-manifest.77db9e2c998111782d63197017720a1b.js",
+    "service-worker.js": "./service-worker.js"
   }
 }
