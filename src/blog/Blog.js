@@ -13,6 +13,7 @@ import Main from "./Main";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import { post1 } from "./Posts";
+import * as c from "./constants";
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -21,18 +22,18 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const sections = [
-  { title: "Home", url: "#" },
-  { title: "Earthquake Alert", url: "http://seismic.pmd.gov.pk/events.php" },
-  { title: "Under Development", url: "#" },
-  { title: "Under Development", url: "#" },
-  { title: "Under Development", url: "#" },
-  { title: "Under Development", url: "#" },
-  { title: "Under Development", url: "#" }
+  { title: c.HOME },
+  { title: c.EARTHQUAKE_ALERT, url: "http://seismic.pmd.gov.pk/events.php" },
+  { title: c.UNDER_DEVELOPMENT },
+  { title: c.UNDER_DEVELOPMENT },
+  { title: c.UNDER_DEVELOPMENT },
+  { title: c.UNDER_DEVELOPMENT },
+  { title: c.UNDER_DEVELOPMENT }
 ];
 
 const mainFeaturedPost = {
-  title: "Earthquake Safety Tips and Precautions",
-  description: "What Should I Do Before, During, And After An Earthquake?",
+  title: c.HEAD_TITLE,
+  description: c.HEAD_SUB_TITLE,
   image: "https://source.unsplash.com/random",
   imgText: "main image description",
   linkText: "Continue reading…"
@@ -40,26 +41,23 @@ const mainFeaturedPost = {
 
 const featuredPosts = [
   {
-    title: "Simple Hacks for an Earthquake",
-    date: "Jan 10",
-    description:
-      "Carry cash: In an earthquake, ATMs and credit card systems can go offline. Hence , it is advisable to keep some spare cash handy at all times.",
+    title: c.p1_TITLE,
+    date: c.p1_DATE,
+    description: c.p1_DES,
     image: "https://source.unsplash.com/random",
     imageText: "Image Text"
   },
   {
-    title: "Prepare Your Home",
-    date: "Dec 14",
-    description:
-      "Getting your house ready for an earthquake can save you from dealing with a lot of damage should a large earthquake hit. To do so",
+    title: c.p2_TITLE,
+    date: c.p2_DATE,
+    description: c.p2_DES,
     image: "https://source.unsplash.com/random",
     imageText: "Image Text"
   },
   {
-    title: "Things to Keep in Mind",
-    date: "Nov 12",
-    description:
-      "Ducking under a table or desk is the quickest way to protect yourself. If you’re in a high rise building, and away from a table or desk, move against a wall. Don’t panic when the sprinkler or alarm systems turn on due to malfunction, and DO NOT use the elevators.",
+    title: c.p3_TITLE,
+    date: c.p3_DATE,
+    description: c.p3_DES,
     image: "https://source.unsplash.com/random",
     imageText: "Image Text"
   }
@@ -72,17 +70,17 @@ const sidebar = {
   description:
     "This website is under construction. Universal Design and Urdu language support will also be added soon",
   archives: [
-    { title: "March 2020", url: "#" },
-    { title: "February 2020", url: "#" },
-    { title: "January 2020", url: "#" },
-    { title: "November 1999", url: "#" },
-    { title: "October 1999", url: "#" },
-    { title: "September 1999", url: "#" },
-    { title: "August 1999", url: "#" },
-    { title: "July 1999", url: "#" },
-    { title: "June 1999", url: "#" },
-    { title: "May 1999", url: "#" },
-    { title: "April 1999", url: "#" }
+    { title: "March 2020" },
+    { title: "February 2020" },
+    { title: "January 2020" },
+    { title: "November 1999" },
+    { title: "October 1999" },
+    { title: "September 1999" },
+    { title: "August 1999" },
+    { title: "July 1999" },
+    { title: "June 1999" },
+    { title: "May 1999" },
+    { title: "April 1999" }
   ],
   social: [
     { name: "GitHub", icon: GitHubIcon },
@@ -98,7 +96,7 @@ export default function Blog() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Earthquake Managment System" sections={sections} />
+        <Header title={c.EMS} sections={sections} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
@@ -107,10 +105,7 @@ export default function Blog() {
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main
-              title="Earthquake Safety Tips and Precautions"
-              posts={posts}
-            />
+            <Main title={c.HEAD_TITLE} posts={posts} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
@@ -120,7 +115,7 @@ export default function Blog() {
           </Grid>
         </main>
       </Container>
-      <Footer title="" description="Earthquake Management System" />
+      <Footer title="" description={c.EMS} />
     </React.Fragment>
   );
 }

@@ -1,4 +1,8 @@
-export const post1 = `# What Should I Do Before, During, And After An Earthquake?
+const lang = localStorage.getItem("lang");
+let isEng: Boolean;
+lang === "ur" ? (isEng = false) : (isEng = true);
+export let post1 = isEng
+  ? `# What Should I Do Before, During, And After An Earthquake?
 
 #### January 31, 2020 by [OsloMet](/)
 
@@ -35,9 +39,8 @@ Earthquakes can be devastating disasters, but everyone who takes appropriate ear
 - Stay away from damaged areas.
 - If you're at school or work, follow the emergency plan or the instructions of the person in charge.
 - Expect aftershocks.
-`;
-
-export const post2 = `زلزلے سے پہلے ، دوران اور بعد میں مجھے کیا کرنا چاہئے؟
+`
+  : `زلزلے سے پہلے ، دوران اور بعد میں مجھے کیا کرنا چاہئے؟
 
 
 
