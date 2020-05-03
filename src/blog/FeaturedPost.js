@@ -1,3 +1,4 @@
+/* eslint-disable no-script-url */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -23,13 +24,15 @@ const useStyles = makeStyles({
 
 export default function FeaturedPost(props) {
   const classes = useStyles();
-  const { post } = props;
+  const { post, appContext } = props;
 
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href="#">
+      <CardActionArea component="a" href={post.id === "1" ? "#post1":
+                                          post.id === "2" ? "#post2":
+                                          post.id === "3" ? "#post3":null }>
         <Card className={classes.card}>
-          <div className={classes.cardDetails}>
+          <div className={classes.cardDetails} >
             <CardContent>
               <Typography component="h2" variant="h5">
                 {post.title}
@@ -40,7 +43,7 @@ export default function FeaturedPost(props) {
               <Typography variant="subtitle1" paragraph>
                 {post.description}
               </Typography>
-              <Typography variant="subtitle1" color="primary">
+              <Typography variant="subtitle1" color="primary" >
                 Continue reading...
               </Typography>
             </CardContent>

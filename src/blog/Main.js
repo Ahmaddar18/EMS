@@ -26,7 +26,7 @@ export default function Main(props) {
       {posts.map(post => (
         <Markdown className={classes.markdown} key={post.substring(0, 40)}>
           {post}
-        </Markdown>
+        </Markdown> 
       ))}
     </Grid>
   );

@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-
+import Dropdown from "./Dropdown";
 const useStyles = makeStyles(theme => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`
@@ -39,7 +39,9 @@ export default function Header(props) {
         >
           {title}
         </Typography>
+        <Dropdown />
       </Toolbar>
+
       <Toolbar
         component="nav"
         variant="dense"
