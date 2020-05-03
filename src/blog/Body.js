@@ -31,7 +31,7 @@ const featuredPosts = [
     title: c.p1_TITLE,
     date: c.p1_DATE,
     description: c.p1_DES,
-    image: "https://source.unsplash.com/random",
+    image: "https://www.earthquakecountry.org/library/step5wideicon.png",
     imageText: "Image Text"
   },
   {
