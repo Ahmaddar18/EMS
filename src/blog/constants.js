@@ -1,16 +1,20 @@
 const lang = localStorage.getItem("lang");
-let isEng: Boolean;
+let isEng;
 lang === "ur" ? (isEng = false) : (isEng = true);
 export const ID1 = "1";
 export const ID2 = "2";
 export const ID3 = "3";
 
+export const GALLERY = isEng
+  ? "Gallery"
+  : "تصاویر";
 export const EMS = isEng
   ? "Earthquake Management System"
   : "زلزلہ مینجمنٹ سسٹم";
 export const UNDER_DEVELOPMENT = isEng ? "Under Development" : "زیر تعمیر";
 
 export const HOME = isEng ? "Home" : "گھر";
+export const CONTACT = isEng ? "Contact Us" : "رابطہ کرنے کے لئے";
 
 export const EARTHQUAKE_ALERT = isEng ? "EARTHQUAKE ALERT" : "انتباہ زلزلے سے";
 

@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 const mainFeaturedPost = {
   title: c.HEAD_TITLE,
   description: c.HEAD_SUB_TITLE,
-  image: "https://source.unsplash.com/random",
+  image:"https://source.unsplash.com/random", //"https://source.unsplash.com/random",
   imgText: "main image description",
   linkText: "Continue reading…"
 };
@@ -31,7 +31,7 @@ const featuredPosts = [
     title: c.p1_TITLE,
     date: c.p1_DATE,
     description: c.p1_DES,
-    image: "https://www.earthquakecountry.org/library/step5wideicon.png",
+    image: "https://seoimgak.mmtcdn.com/blog/sites/default/files/images/hide-under-table.png",//https://www.earthquakecountry.org/library/step5wideicon.png",
     imageText: "Image Text"
   },
   {

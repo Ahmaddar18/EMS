@@ -56,7 +56,7 @@ export default function Header(props) {
             href={section.url}
             className={classes.toolbarLink}
           >
-            {section.title}
+            <b>{section.title}</b>
           </Link>
         ))}
       </Toolbar>
