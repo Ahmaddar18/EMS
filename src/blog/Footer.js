@@ -33,9 +33,9 @@ export default function Footer(props) {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
-        <Typography variant="h6" align="center" gutterBottom>
+        {/* <Typography variant="h6" align="center" gutterBottom>
           {title}
-        </Typography>
+        </Typography> */}
         <Typography
           variant="subtitle1"
           align="center"

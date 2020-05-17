@@ -1,13 +1,19 @@
 const lang = localStorage.getItem("lang");
-let isEng;
+export let isEng;
 lang === "ur" ? (isEng = false) : (isEng = true);
 export const ID1 = "1";
 export const ID2 = "2";
 export const ID3 = "3";
-
-export const GALLERY = isEng
-  ? "Gallery"
-  : "تصاویر";
+export const CONTINUE_READING = isEng
+  ? "Continue Reading..."
+  : "پڑھنا جاری رکھیے";
+export const SIDEBAR_DES = isEng
+  ? "This is Universally Designed Website. Here you can find safety precautions for earthquake"
+  : "یہ عالمی ڈیزائن ویب سائٹ ہے۔ یہاں آپ زلزلے سے متعلق حفاظتی تدابیر پاسکتے ہیں";
+export const GALLERY = isEng ? "Gallery" : "تصاویر";
+export const ABOUT = isEng ? "About" : "بارے میں";
+export const ARCHIVES = isEng ? "Archives" : "آرکائیوز";
+export const SOCIAL = isEng ? "Social" : "سماجی";
 export const EMS = isEng
   ? "Earthquake Management System"
   : "زلزلہ مینجمنٹ سسٹم";

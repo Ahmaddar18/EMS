@@ -10,19 +10,23 @@ import Main from "./Main";
 import Sidebar from "./Sidebar";
 import { post1 } from "./Posts";
 import * as c from "./constants";
+const lang = localStorage.getItem("lang");
+let isEng;
+lang === "ur" ? (isEng = false) : (isEng = true);
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
-    marginTop: theme.spacing(3)
+    marginTop: theme.spacing(3),
+    textAlign: isEng?"left":"right",
   }
 }));
 
 const mainFeaturedPost = {
   title: c.HEAD_TITLE,
   description: c.HEAD_SUB_TITLE,
-  image:"https://source.unsplash.com/random", //"https://source.unsplash.com/random",
+  image:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEUzMzPK7GI1AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC", //"https://source.unsplash.com/random",
   imgText: "main image description",
-  linkText: "Continue reading…"
+  linkText: c.CONTINUE_READING
 };
 
 const featuredPosts = [
@@ -39,7 +43,7 @@ const featuredPosts = [
     title: c.p2_TITLE,
     date: c.p2_DATE,
     description: c.p2_DES,
-    image: "https://source.unsplash.com/random",
+    image: "https://www.tfd.metro.tokyo.lg.jp/lfe/bou_topic/jisin/data/point-02.jpg",
     imageText: "Image Text"
   },
   {
@@ -47,7 +51,7 @@ const featuredPosts = [
     title: c.p3_TITLE,
     date: c.p3_DATE,
     description: c.p3_DES,
-    image: "https://source.unsplash.com/random",
+    image: "https://www.tfd.metro.tokyo.lg.jp/lfe/bou_topic/jisin/data/point-08.jpg",
     imageText: "Image Text"
   }
 ];
@@ -55,9 +59,9 @@ const featuredPosts = [
 const posts = [post1];
 
 const sidebar = {
-  title: "About",
+  title: c.ABOUT,
   description:
-    "This website is under construction. Universal Design and Urdu language support will also be added soon",
+    c.SIDEBAR_DES,
   archives: [
     { title: "March 2020" },
     { title: "February 2020" },

@@ -5,14 +5,16 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-
+import * as c from "./constants";
 const useStyles = makeStyles(theme => ({
   sidebarAboutBox: {
     padding: theme.spacing(2),
     backgroundColor: theme.palette.grey[200],
+    
   },
   sidebarSection: {
     marginTop: theme.spacing(3),
+    
   },
 }));
 
@@ -29,26 +31,27 @@ export default function Sidebar(props) {
         <Typography>{description}</Typography>
       </Paper>
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
-        Archives
+        {c.ARCHIVES}
       </Typography>
       {archives.map(archive => (
         <Link display="block" variant="body1" href={archive.url} key={archive.title}>
           {archive.title}
         </Link>
       ))}
+      {/*
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
-        Social
+        {c.SOCIAL}
       </Typography>
-      {social.map(network => (
+       {social.map(network => (
         <Link display="block" variant="body1" href="#" key={network}>
-          <Grid container direction="row" spacing={1} alignItems="center">
+          <Grid container direction="row" spacing={1} alignItems="center" >
             <Grid item>
               <network.icon />
             </Grid>
-            <Grid item>{network.name}</Grid>
+            <Grid item style={{textAlign:"right",alignItems:"right"}}>{network.name}</Grid>
           </Grid>
         </Link>
-      ))}
+      ))} */}
     </Grid>
   );
 }

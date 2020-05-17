@@ -5,6 +5,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import Dropdown from "./Dropdown";
+import Contact from "./Contact/Contact";
+import Gallery from "./Gallery/Gallery";
+import Body from "./Body";
+import * as c from "./constants";
+import { hasPrefixSuffix } from "antd/lib/input/ClearableLabeledInput";
 const useStyles = makeStyles(theme => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`
@@ -24,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header(props) {
   const classes = useStyles();
-  const { sections, title } = props;
+  const { sections, title, appContext } = props;
 
   return (
     <React.Fragment>
@@ -53,8 +58,37 @@ export default function Header(props) {
             noWrap
             key={section.title}
             variant="body2"
-            href={section.url}
             className={classes.toolbarLink}
+            onClick={() => {
+              if(section.title === c.GALLERY)
+              {
+                let screen = [];
+                screen.push(<Gallery key={section.title} />);
+                appContext.setState({
+                  screen: screen
+                });
+              }
+              else if(section.title === c.CONTACT)
+              {
+                let screen = [];
+                screen.push(<Contact key={section.title} />);
+                appContext.setState({
+                  screen: screen
+                });
+              }
+              else if(section.title === c.HOME) 
+              {
+                let screen = [];
+                screen.push(<Body key={section.title} />);
+                appContext.setState({
+                  screen: screen
+                });
+              }
+              else if(section.title === c.EARTHQUAKE_ALERT) 
+              {
+                window.open(section.url)
+              }
+            }}
           >
             <b>{section.title}</b>
           </Link>

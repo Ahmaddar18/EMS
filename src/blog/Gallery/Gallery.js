@@ -1,8 +1,4 @@
 import React from "react";
-//import "./main.css";
-import mail from "../../assets/mail.png";
-//import * as c from "./constants";
-import { message } from "antd";
 import { Carousel } from "antd";
 import "./style.css"
 class Gallery extends React.Component {

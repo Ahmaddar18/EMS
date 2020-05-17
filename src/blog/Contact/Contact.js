@@ -5,12 +5,12 @@ import * as c from "./constants";
 import { message, Button } from "antd";
 const success = () => {
   if (document.getElementById("name").value === "")
-    message.error("Please provide your name");
+    message.error(c.errName);
   else if (document.getElementById("email").value === "")
-    message.error("Pleae provide your email adress");
+    message.error(c.EMAIL);
   else if (document.getElementById("msg").value === "")
-    message.error("Pleae enter message");
-  else message.success("Your Message Successfully Sent");
+    message.error(c.errMSG);
+  else message.success(c.errSUCCESS);
 };
 class Contact extends React.Component {
   render() {

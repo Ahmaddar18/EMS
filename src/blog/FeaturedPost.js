@@ -1,21 +1,23 @@
 /* eslint-disable no-script-url */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Hidden from '@material-ui/core/Hidden';
+import React from "react";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Hidden from "@material-ui/core/Hidden";
+import * as c from "./constants";
 
 const useStyles = makeStyles({
   card: {
-    display: 'flex',
+    display: "flex",
   },
   cardDetails: {
     flex: 1,
+    textAlign: c.isEng ? "left" : "right",
   },
   cardMedia: {
     width: 160,
@@ -28,11 +30,20 @@ export default function FeaturedPost(props) {
 
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href={post.id === "1" ? "#post1":
-                                          post.id === "2" ? "#post2":
-                                          post.id === "3" ? "#post3":null }>
+      <CardActionArea
+        component="a"
+        href={
+          post.id === "1"
+            ? "#post1"
+            : post.id === "2"
+            ? "#post2"
+            : post.id === "3"
+            ? "#post3"
+            : null
+        }
+      >
         <Card className={classes.card}>
-          <div className={classes.cardDetails} >
+          <div className={classes.cardDetails}>
             <CardContent>
               <Typography component="h2" variant="h5">
                 {post.title}
@@ -43,13 +54,17 @@ export default function FeaturedPost(props) {
               <Typography variant="subtitle1" paragraph>
                 {post.description}
               </Typography>
-              <Typography variant="subtitle1" color="primary" >
-                Continue reading...
+              <Typography variant="subtitle1" color="primary">
+                {c.CONTINUE_READING}
               </Typography>
             </CardContent>
           </div>
           <Hidden xsDown>
-            <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
+            <CardMedia
+              className={classes.cardMedia}
+              image={post.image}
+              title={post.imageTitle}
+            />
           </Hidden>
         </Card>
       </CardActionArea>
